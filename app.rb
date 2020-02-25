@@ -8,25 +8,31 @@ DB ||= Sequel.connect "sqlite://#{Dir.pwd}/development.sqlite3"             #
 DB.loggers << Logger.new($stdout) unless DB.loggers.size > 0                #
 def view(template); erb template.to_sym; end                                #
 use Rack::Session::Cookie, key: 'rack.session', path: '/', secret: 'secret' #
-before { puts "Parameters: #{params}" }                                     #
-after { puts; }                                                             #
+before { puts; puts "--------------- NEW REQUEST ---------------"; puts }   #
+after { puts }                                                              #
 #############################################################################
 
 events_table = DB.from(:events)
 rsvps_table = DB.from(:rsvps)
 
 get "/" do
+    puts "params: #{params}"
+
     puts events_table.all
     @events = events_table.all
     view "events"
 end
 
 get "/events/:id" do
+    puts "params: #{params}"
+
     @event = events_table.where(id: params[:id]).first
     view "event"
 end
 
 get "/events/:id/rsvps/new" do
+    puts "params: #{params}"
+
     @event = events_table.where(id: params[:id]).first
     view "new_rsvp"
 end
