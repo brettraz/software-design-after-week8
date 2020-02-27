@@ -12,27 +12,27 @@ before { puts; puts "--------------- NEW REQUEST ---------------"; puts }   #
 after { puts }                                                              #
 #############################################################################
 
-events_table = DB.from(:events)
-rsvps_table = DB.from(:rsvps)
+items_table = DB.from(:items)
+customer_input_table = DB.from(:customer_input)
 
 get "/" do
     puts "params: #{params}"
 
-    puts events_table.all
-    @events = events_table.all
-    view "events"
+    puts items_table.all
+    @items = items_table.all
+    view "items"
 end
 
-get "/events/:id" do
+get "/items/:id" do
     puts "params: #{params}"
 
-    @event = events_table.where(id: params[:id]).first
-    view "event"
+    @items = items_table.where(id: params[:id]).first
+    view "items"
 end
 
-get "/events/:id/rsvps/new" do
+get "/events/:id/customer_input/new" do
     puts "params: #{params}"
 
-    @event = events_table.where(id: params[:id]).first
-    view "new_rsvp"
+    @items = events_table.where(id: params[:id]).first
+    view "new_customer_input"
 end

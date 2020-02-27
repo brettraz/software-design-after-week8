@@ -7,9 +7,9 @@ DB = Sequel.connect "sqlite://#{Dir.pwd}/development.sqlite3"          #
 DB.create_table! :items do
   primary_key :id
   Boolean :status_available
-  String :item_type
-  String :item_name
-  String :condition
+  String :item_type, 
+  String :item_name, 
+  String :condition, 
   String :description, text: true
   String :price
   
