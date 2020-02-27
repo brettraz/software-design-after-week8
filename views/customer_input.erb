@@ -1,16 +1,13 @@
 <h2>
-    <i class="far fa-calendar-alt"></i>
-    <%= @event[:date] %>
+    
+    <%= @item[:item_name] %>
 </h2>
-<h1>RSVP for <%= @event[:title] %></h1>
+<p1> <%= @item[:id] %>
 
 <form>
   <div class="form-group">
-    <label>Are you going?</label>
-    <select class="form-control">
-      <option>Yes</option>
-      <option>No</option>
-    </select>
+    <label>Customer Information</label>
+    
   </div>
   <div class="form-group">
     <label>Your name</label>
@@ -21,7 +18,11 @@
     <input type="email" class="form-control" placeholder="name@example.com">
   </div>
   <div class="form-group">
-    <label>Comments</label>
+    <label>Phone Number</label>
+    <input type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Desired Pick-Up Time Special Instructions</label>
     <textarea class="form-control" rows="3"></textarea>
   </div>
 </form>

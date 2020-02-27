@@ -1,26 +1,59 @@
-<div class="row">
-    <div class="col-sm-9">
-        <h2>
-            <i class="far fa-calendar-alt"></i>
-            <%= @event[:date] %>
-        </h2>
-        <h1><%= @event[:title] %></h1>
-        <p><%= @event[:description] %></p>
-        <div class="media">
-            <i class="fas fa-thumbs-up fa-3x"></i>
-            <div class="media-body">
-                <h5 class="mt-0">Brian</h5>
-                Wouldn't miss it!
+
+
+    
+
+    <head>
+                <title>Rasmussen Used Goods</title>
+    </head>
+  <body>
+   
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="col-sm-12 text-center">
+                    <h1 class="display-1">The Elmhurst, Illinois Rasmussen Used Goods Emporium</h1 class="display-1">
+                </div>
             </div>
         </div>
-        <p class="mt-5"><a href="/events/<%= @event[:id] %>/rsvps/new" class="btn btn-primary">RSVP now!</a></p>
+        <div class="container">
+            <div class="row mt-12">
+                <div class="col-sm-12 text-center">    
+                    <h1>Save Money For Your Family</h1>
+                
+                        
+                        
+                            <p> Are you wondering how you are going to make ends meet while raising your family? </p>
+                            <break>
+                            <p> Do you want nice things for your kids but can't believe the prices? </p>
+                            <break>
+                            <p> We understand.  Let us help you! </p>
+                            <break>
+                            <p> We have everything from children's clothes, furniture, toys, carseats, strollers, bikes, to sporting equipment, and exercise equipment for you! </p>
+                            <break>
+                            <p> All at prices you can't beat.  It takes a village..... </p>
+                            <break>  
+                            <p> Search the item you want, and click it to arrange a pickup time.  It's that easy! </p>
+                                
+                            
+                        
+                     <div class="col text-center">
+                        <h5>See Items For Sale</h5>
+                        
+                        <a class="btn btn-primary btn-lg" href="/items" role="button">See All Items</a>
+                    </div>   
+
+                </div>
+                
+            </div>
+            
+        
+            
+                    
+  
+
+                        
+                
+        </div>
     </div>
-    <div class="col-sm-3">
-        <h3>When?</h3>
-        <p><%= @event[:date] %></p>
-        <h3>Where?</h3>
-        <p><%= @event[:location] %></p>
-        <h3>How many guests so far?</h3>
-        <p>?????</p>
-    </div>
-</div>
+    
+
+  </body>
